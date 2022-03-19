@@ -1,9 +1,18 @@
 import { useState } from "react";
 import ContentCard from "./content-card/ContentCard";
 import FilterBar from "./filter-bar/FilterBar";
-import { HomeContentWrapper, CardsWrapper } from "./HomeContent.styled";
+import SortPanel from "./sort-panel/SortPanel";
+import {
+  HomeContentWrapper,
+  CardsWrapper,
+  MainContentWrapper,
+} from "./HomeContent.styled";
 
-const HomeContent = () => {
+interface HomeContentProps {
+  page?: string;
+}
+
+const HomeContent = ({ page }: HomeContentProps) => {
   const [filterActive, setFilterActive] = useState<boolean>(false);
 
   return (
@@ -12,16 +21,25 @@ const HomeContent = () => {
         filterActive={filterActive}
         setFilterActive={setFilterActive}
       />
-      <CardsWrapper>
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-      </CardsWrapper>
+      <MainContentWrapper>
+        <SortPanel />
+        <CardsWrapper>
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+        </CardsWrapper>
+      </MainContentWrapper>
     </HomeContentWrapper>
   );
 };

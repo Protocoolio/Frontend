@@ -1,5 +1,10 @@
-import type { DocumentContext, DocumentInitialProps } from "next/document";
-import Document from "next/document";
+import {
+  DocumentContext,
+  DocumentInitialProps,
+  Main,
+  NextScript,
+} from "next/document";
+import Document, { Head, Html } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 class CustomDocument extends Document {
@@ -29,6 +34,25 @@ class CustomDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=Roboto&family=Ubuntu&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }
 

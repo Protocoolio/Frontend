@@ -1,8 +1,17 @@
-import React, { useState } from "react";
-import { FilterContainer, IconContainer } from "./FilterBar.styled";
+import React from "react";
+import {
+  FilterContainer,
+  FilterIcon,
+  FilterItem,
+  IconContainer,
+  Title,
+} from "./FilterBar.styled";
 
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffSharpIcon from "@mui/icons-material/VisibilityOffSharp";
+import AccordionStatus from "./accordions/AccordionStatus";
+import AccordionPrice from "./accordions/AccordionPrice";
+import AccordionCollections from "./accordions/AccordionCollections";
+import AccordionCategories from "./accordions/AccordionCategories";
+import ReadMoreIcon from "@mui/icons-material/ReadMore";
 
 interface FilterBarProps {
   filterActive: boolean;
@@ -11,10 +20,21 @@ interface FilterBarProps {
 
 const FilterBar = ({ filterActive, setFilterActive }: FilterBarProps) => {
   return (
-    <FilterContainer active={filterActive}>
-      <IconContainer onClick={() => setFilterActive(!filterActive)}>
-        {filterActive ? <VisibilityOffSharpIcon /> : <VisibilityIcon />}
-      </IconContainer>
+    <FilterContainer filterActive={filterActive}>
+      <FilterItem>
+        <Title filterActive={filterActive}>Filters</Title>
+        <IconContainer onClick={() => setFilterActive(!filterActive)}>
+          <FilterIcon filterActive={filterActive} />
+        </IconContainer>
+      </FilterItem>
+      {filterActive && (
+        <>
+          <AccordionStatus />
+          <AccordionPrice />
+          <AccordionCollections />
+          <AccordionCategories />
+        </>
+      )}
     </FilterContainer>
   );
 };

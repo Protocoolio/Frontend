@@ -7,9 +7,19 @@ export const AsideContainer = styled.div<{ flex?: number }>(
     border-left: 1px solid ${customStyle.colors.border};
     display: flex;
     flex: ${flex};
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     min-height: 80vh;
-    padding: 0;
   `
 );
+
+export const CardsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+`;
+
+export const Title = styled.h2`
+  margin-top: 30px;
+  text-decoration: underline;
+`;

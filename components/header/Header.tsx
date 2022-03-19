@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   HeaderContainer,
   LogoWrapper,
@@ -10,9 +11,15 @@ const Header = () => {
     <HeaderContainer>
       <LogoWrapper>LOGO</LogoWrapper>
       <Navigation>
-        <NavigationItem>TOMB</NavigationItem>
-        <NavigationItem>OLYMPUS</NavigationItem>
-        <NavigationItem>WARP</NavigationItem>
+        <NavigationItem>
+          <Link href={"/tomb"}>TOMB</Link>
+        </NavigationItem>
+        <NavigationItem>
+          <Link href={"/olympus"}>OLYMPUS</Link>
+        </NavigationItem>
+        <NavigationItem>
+          <Link href={"/warp"}>WARP</Link>
+        </NavigationItem>
       </Navigation>
     </HeaderContainer>
   );

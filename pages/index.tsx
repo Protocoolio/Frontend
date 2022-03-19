@@ -4,12 +4,7 @@ import HomeContent from "../components/home-content/HomeContent";
 import { HomeContainer } from "./index.styled";
 
 const HomePage: NextPage = () => {
-  return (
-    <HomeContainer>
-      <HomeContent />
-      <Aside flex={1} />
-    </HomeContainer>
-  );
+  return <div>Home Page to add</div>;
 };
 
 export default HomePage;

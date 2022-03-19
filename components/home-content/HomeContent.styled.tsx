@@ -10,9 +10,12 @@ export const HomeContentWrapper = styled.div<{ flex?: number }>(
   `
 );
 
+export const MainContentWrapper = styled.div`
+  flex: 5;
+`;
+
 export const CardsWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  flex: 5;
 `;

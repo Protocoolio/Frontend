@@ -1,28 +1,18 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
-import { customStyle } from "../../../styles/constants";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { StyledCard, CardActionsContainer } from "./ContemtCard.styled";
 
 const ContentCard = () => {
   return (
-    <Card
-      sx={{
-        background: `${customStyle.colors.secondary}`,
-        borderRadius: 4,
-        boxShadow: "1px -1px 12px 0px rgba(66, 68, 90, 1)",
-        height: 400,
-        margin: 1.5,
-        padding: 1,
-        width: 250,
-      }}
-    >
+    <StyledCard sx={{ borderRadius: 4 }}>
       <CardHeader
         title="Title"
         sx={{
@@ -42,15 +32,21 @@ const ContentCard = () => {
           together with your guests.
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+      <CardActionsContainer>
+        <IconButton>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton>
           <ShareIcon />
         </IconButton>
-      </CardActions>
-    </Card>
+        <IconButton>
+          <FacebookIcon />
+        </IconButton>
+        <IconButton>
+          <InstagramIcon />
+        </IconButton>
+      </CardActionsContainer>
+    </StyledCard>
   );
 };
 

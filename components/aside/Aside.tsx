@@ -1,5 +1,5 @@
 import ContentCard from "../home-content/content-card/ContentCard";
-import { AsideContainer } from "./Aside.styled";
+import { AsideContainer, CardsWrapper, Title } from "./Aside.styled";
 
 interface AsideProps {
   flex: number;
@@ -8,9 +8,12 @@ interface AsideProps {
 const Aside = ({ flex }: AsideProps) => {
   return (
     <AsideContainer flex={flex}>
-      <ContentCard />
-      <ContentCard />
-      <ContentCard />
+      <Title>PROMOTED</Title>
+      <CardsWrapper>
+        <ContentCard />
+        <ContentCard />
+        <ContentCard />
+      </CardsWrapper>
     </AsideContainer>
   );
 };

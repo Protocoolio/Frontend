@@ -7,6 +7,8 @@ export const HeaderContainer = styled.header(
     border-bottom: 1px solid ${customStyle.colors.border};
     border-top: 1px solid ${customStyle.colors.border};
     display: flex;
+    font-family: ${customStyle.fonts.ubuntu};
+    font-weight: bold;
     height: 10vh;
     justify-content: space-between;
     left: 0;
@@ -38,5 +40,18 @@ export const Navigation = styled.ul`
 export const NavigationItem = styled.li`
   cursor: pointer;
   margin: 0 20px;
-  padding: 5px;
+  transition: 0.2s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  & > a {
+    text-decoration: none;
+    color: ${customStyle.colors.black};
+
+    &:hover {
+      color: ${customStyle.colors.violet};
+    }
+  }
 `;

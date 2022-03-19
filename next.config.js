@@ -5,6 +5,16 @@ const withTM = require("next-transpile-modules")([
 ]);
 
 module.exports = withTM({
+  reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/tomb",
+        permanent: true,
+      },
+    ];
+  },
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
