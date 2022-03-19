@@ -5,7 +5,7 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 export const Wrapper = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />

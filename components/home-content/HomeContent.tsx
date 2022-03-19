@@ -1,7 +1,9 @@
 import { useState } from "react";
+
 import ContentCard from "./content-card/ContentCard";
 import FilterBar from "./filter-bar/FilterBar";
 import SortPanel from "./sort-panel/SortPanel";
+
 import {
   HomeContentWrapper,
   CardsWrapper,

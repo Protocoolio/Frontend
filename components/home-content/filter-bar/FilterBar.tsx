@@ -1,4 +1,10 @@
 import React from "react";
+
+import AccordionStatus from "./accordions/AccordionStatus";
+import AccordionPrice from "./accordions/AccordionPrice";
+import AccordionCollections from "./accordions/AccordionCollections";
+import AccordionCategories from "./accordions/AccordionCategories";
+
 import {
   FilterContainer,
   FilterIcon,
@@ -6,12 +12,6 @@ import {
   IconContainer,
   Title,
 } from "./FilterBar.styled";
-
-import AccordionStatus from "./accordions/AccordionStatus";
-import AccordionPrice from "./accordions/AccordionPrice";
-import AccordionCollections from "./accordions/AccordionCollections";
-import AccordionCategories from "./accordions/AccordionCategories";
-import ReadMoreIcon from "@mui/icons-material/ReadMore";
 
 interface FilterBarProps {
   filterActive: boolean;

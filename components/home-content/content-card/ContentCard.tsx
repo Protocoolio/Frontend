@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -8,6 +9,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+
 import { StyledCard, CardActionsContainer } from "./ContemtCard.styled";
 
 const ContentCard = () => {

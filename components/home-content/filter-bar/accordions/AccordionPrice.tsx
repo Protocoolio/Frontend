@@ -1,6 +1,7 @@
 import * as React from "react";
-import Typography from "@mui/material/Typography";
+
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import { Accordion } from "./Accordion.styled";
 
 const AccordionPrice = () => {
