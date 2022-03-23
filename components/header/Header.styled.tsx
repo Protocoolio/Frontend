@@ -7,9 +7,9 @@ export const HeaderContainer = styled.header(
     border-bottom: 1px solid ${customStyle.colors.border};
     border-top: 1px solid ${customStyle.colors.border};
     display: flex;
-    font-family: ${customStyle.fonts.ubuntu};
+    font-family: ${customStyle.fonts.lato};
     font-weight: bold;
-    height: 10vh;
+    height: 5vh;
     justify-content: space-between;
     left: 0;
     padding: 0 100px;

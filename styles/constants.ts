@@ -1,17 +1,24 @@
 export const customStyle = {
   colors: {
-    primary: "#ffe6e6",
-    secondary: "#ffcccc",
+    primary: "#F8F9FA",
+    secondary: "#efeff5",
     white: "#ffffff",
     black: "#000000",
-    border: "rgba(255, 170, 128, 0.5)",
+    border: "rgba(208, 208, 226, 0.8)",
     violet: "#b300b3",
   },
   boxShadow: "0px 0px 12px 0px rgba(150, 120, 120, 1)",
   fonts: {
     roboto: "'Roboto', sans-serif",
-    bebas_neue: " 'Bebas Neue', cursive",
-    ubuntu: "'Ubuntu', sans-serif",
-    permanent_marker: "'Permanent Marker', cursive",
+    lato: "'Lato', sans-serif",
   },
+};
+
+export const breakpoints = {
+  xxs: 375,
+  xs: 575,
+  sm: 767,
+  md: 991,
+  lg: 1199,
+  xl: 1399,
 };

@@ -1,54 +1,121 @@
-import * as React from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
+import Button from "@mui/material/Button";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardImage,
+  CardName,
+  CardNetwork,
+  CardStartDate,
+  IconWrapper,
+  CardTags,
+  TagItem,
+  TagTitle,
+  ActionButtons,
+} from "./ContentCard.styled";
+import { CardInfo } from "../../../types/CommonTypes";
+import Image from "next/image";
 
-import { StyledCard, CardActionsContainer } from "./ContemtCard.styled";
+const verifiedLogo = require("../../../shared/images/checked.png").default;
+
+const DUMMY_DATA: CardInfo = {
+  name: "Tomb Fork",
+  image: "https://assets.duelistking.com/metadata/horus--rage.jpg",
+  description:
+    "This is an innovatinve farmining protocol This is an innovatinve farmining protocol This is an innovatinve farmining protocol This is an innovatinve farmining protocol This is an innovatinve farmining protocolThis is an innovatinve farmining protoco This is an innovatinve farmining protocol This is an innovatinve farmining protocol",
+  startDate: "Tue Mar 22 2022 09:35:40 GMT+0000",
+  network: "Fantom",
+  verified: true,
+  added: "Tue Mar 20 2022 09:35:40 GMT+0000",
+  viewCount: 13,
+  tags: ["KYC", "Audited", "Promoted", "Verified", "Renounced"],
+  socials: {
+    discord: "www.onet.pl",
+    twitter: "",
+    website: "",
+    telegram: "",
+  },
+};
+
+const MAX_DESCRIPTION_HEIGHT = 50;
 
 const ContentCard = () => {
+  const [descriptionHeight, setDescriptionHeight] = useState<number>(0);
+
+  const descriptionRef = useRef<HTMLDivElement>(null);
+
+  const tags = DUMMY_DATA.tags.map((tag: string, index: number) => (
+    <TagItem key={index} className={tag}>
+      {tag}
+    </TagItem>
+  ));
+
+  const animateCardDescription = descriptionHeight > MAX_DESCRIPTION_HEIGHT;
+
+  console.log(descriptionHeight);
+  console.log(animateCardDescription);
+
+  const getDescriptionHeight = () => {
+    setDescriptionHeight(descriptionRef.current?.clientHeight || 0);
+  };
+
+  useLayoutEffect(() => {
+    getDescriptionHeight();
+  }, [descriptionRef.current?.clientHeight]);
   return (
-    <StyledCard sx={{ borderRadius: 4 }}>
-      <CardHeader
-        title="Title"
-        sx={{
-          padding: 1,
-          textAlign: "center",
-        }}
-      />
-      <CardMedia
-        component="img"
-        height="150"
-        image="https://assets.duelistking.com/metadata/horus--rage.jpg"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests.
-        </Typography>
+    <Card>
+      <CardImage src={DUMMY_DATA.image} alt={DUMMY_DATA.name} />
+      <CardContent animateCardDescription={animateCardDescription}>
+        <CardName>
+          {DUMMY_DATA.name}
+          <IconWrapper>
+            {DUMMY_DATA.verified && (
+              <Image
+                src={verifiedLogo}
+                alt={DUMMY_DATA.name}
+                width="16"
+                height="16"
+              />
+            )}
+          </IconWrapper>
+        </CardName>
+        <CardNetwork>{DUMMY_DATA.network}</CardNetwork>
+        <CardDescription
+          ref={descriptionRef}
+          animateCardDescription={animateCardDescription}
+        >
+          {DUMMY_DATA.description}
+        </CardDescription>
+        {/*Format date if needed*/}
+        <CardStartDate>{DUMMY_DATA.startDate.slice(0, 16)}</CardStartDate>
+        <CardTags>
+          <TagTitle>Tags</TagTitle>
+          {tags}
+        </CardTags>
+        <ActionButtons>
+          <Button
+            variant="contained"
+            size="small"
+            sx={{ fontSize: 12 }}
+            endIcon={<ArrowForwardIcon />}
+            className="btn_details"
+          >
+            View Details
+          </Button>
+          <Button
+            variant="contained"
+            size="small"
+            sx={{ fontSize: 12 }}
+            color="success"
+          >
+            View website
+          </Button>
+        </ActionButtons>
       </CardContent>
-      <CardActionsContainer>
-        <IconButton>
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton>
-          <ShareIcon />
-        </IconButton>
-        <IconButton>
-          <FacebookIcon />
-        </IconButton>
-        <IconButton>
-          <InstagramIcon />
-        </IconButton>
-      </CardActionsContainer>
-    </StyledCard>
+    </Card>
   );
 };
 

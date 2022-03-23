@@ -2,13 +2,9 @@ import ContentCard from "../home-content/content-card/ContentCard";
 
 import { AsideContainer, CardsWrapper, Title } from "./Aside.styled";
 
-interface AsideProps {
-  flex: number;
-}
-
-const Aside = ({ flex }: AsideProps) => {
+const Aside = () => {
   return (
-    <AsideContainer flex={flex}>
+    <AsideContainer>
       <Title>PROMOTED</Title>
       <CardsWrapper>
         <ContentCard />

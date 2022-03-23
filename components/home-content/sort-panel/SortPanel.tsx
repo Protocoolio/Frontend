@@ -17,11 +17,11 @@ const SortPanel = () => {
   return (
     <Wrapper>
       <FormControl>
-        <InputLabel color="secondary" id="demo-multiple-name-label">
+        <InputLabel color="primary" id="demo-multiple-name-label">
           Sort by
         </InputLabel>
         <StyledSelect
-          color="secondary"
+          color="primary"
           id="demo-multiple-name"
           input={<OutlinedInput label="Sort by" />}
           labelId="demo-multiple-name-label"
@@ -38,7 +38,7 @@ const SortPanel = () => {
       </FormControl>
       <Button
         variant="outlined"
-        color="secondary"
+        color="primary"
         onClick={() => setSortValue("")}
       >
         Clear sort

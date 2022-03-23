@@ -9,7 +9,7 @@ const TombPage: NextPage = () => {
   return (
     <HomeContainer>
       <HomeContent page="tomb" />
-      <Aside flex={1} />
+      <Aside />
     </HomeContainer>
   );
 };

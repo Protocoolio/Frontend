@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import ContentCard from "./content-card/ContentCard";
 import FilterBar from "./filter-bar/FilterBar";
 import SortPanel from "./sort-panel/SortPanel";
@@ -15,14 +13,9 @@ interface HomeContentProps {
 }
 
 const HomeContent = ({ page }: HomeContentProps) => {
-  const [filterActive, setFilterActive] = useState<boolean>(false);
-
   return (
-    <HomeContentWrapper flex={4}>
-      <FilterBar
-        filterActive={filterActive}
-        setFilterActive={setFilterActive}
-      />
+    <HomeContentWrapper>
+      <FilterBar />
       <MainContentWrapper>
         <SortPanel />
         <CardsWrapper>

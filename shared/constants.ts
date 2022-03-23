@@ -1,21 +1,14 @@
 import { FilterOptions, SortOptions } from "../types/CommonTypes";
 
 export const sortOptions: SortOptions[] = [
-  "Ending Soon",
-  "Highest Last Sale",
-  "Highest Price",
-  "Lowest Price",
-  "Mostly Liked",
-  "Mostly Viewed",
-  "Oldest",
-  "Recently Created",
-  "Recently Listed",
-  "Recently Sold",
+  "Launching soon",
+  "Most viewed",
+  "Name alphabetical",
+  "Recently added",
 ];
 
 export const filterOptions: FilterOptions[] = [
-  "Status",
-  "Price",
-  "Collections",
-  "Categories",
+  "Contracts verified",
+  "Network",
+  "Selections",
 ];

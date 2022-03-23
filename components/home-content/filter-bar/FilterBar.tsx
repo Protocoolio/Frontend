@@ -11,30 +11,26 @@ import {
   FilterItem,
   IconContainer,
   Title,
+  StickyContainer,
 } from "./FilterBar.styled";
 
-interface FilterBarProps {
-  filterActive: boolean;
-  setFilterActive: (value: boolean) => void;
-}
-
-const FilterBar = ({ filterActive, setFilterActive }: FilterBarProps) => {
+const FilterBar = () => {
   return (
-    <FilterContainer filterActive={filterActive}>
-      <FilterItem>
-        <Title filterActive={filterActive}>Filters</Title>
-        <IconContainer onClick={() => setFilterActive(!filterActive)}>
-          <FilterIcon filterActive={filterActive} />
-        </IconContainer>
-      </FilterItem>
-      {filterActive && (
+    <FilterContainer>
+      <StickyContainer>
+        <FilterItem>
+          <Title>Filters</Title>
+          <IconContainer>
+            <FilterIcon />
+          </IconContainer>
+        </FilterItem>
         <>
           <AccordionStatus />
           <AccordionPrice />
           <AccordionCollections />
           <AccordionCategories />
         </>
-      )}
+      </StickyContainer>
     </FilterContainer>
   );
 };

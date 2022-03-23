@@ -19,7 +19,6 @@ export const Wrapper = styled((props) => (
     display: "none",
   },
   backgroundColor: `${customStyle.colors.secondary}`,
-  fontFamily: `${customStyle.fonts.ubuntu}`,
 }));
 
 const Summary = styled((props) => (
@@ -33,11 +32,12 @@ const Details = styled(MuiAccordionDetails)(() => ({
 }));
 
 const Title = styled(Typography)`
-  font-family: ${customStyle.fonts.permanent_marker};
+  font-family: ${customStyle.fonts.lato};
+  font-weight: bold;
 `;
 
 const TextContent = styled(Typography)`
-  font-family: ${customStyle.fonts.ubuntu};
+  font-family: ${customStyle.fonts.roboto};
 `;
 
 export const Accordion = {

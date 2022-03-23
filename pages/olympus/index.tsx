@@ -9,7 +9,7 @@ const OlympusPage: NextPage = () => {
   return (
     <HomeContainer>
       <HomeContent page="olympus" />
-      <Aside flex={1} />
+      <Aside />
     </HomeContainer>
   );
 };

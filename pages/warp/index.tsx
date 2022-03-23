@@ -9,7 +9,7 @@ const WarpPage: NextPage = () => {
   return (
     <HomeContainer>
       <HomeContent page="warp" />
-      <Aside flex={1} />
+      <Aside />
     </HomeContainer>
   );
 };
