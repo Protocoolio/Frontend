@@ -1,7 +1,9 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import Image from "next/image";
+
+import { CardInfo } from "../../../types/CommonTypes";
 
 import {
   Card,
@@ -17,8 +19,6 @@ import {
   TagTitle,
   ActionButtons,
 } from "./ContentCard.styled";
-import { CardInfo } from "../../../types/CommonTypes";
-import Image from "next/image";
 
 const verifiedLogo = require("../../../shared/images/checked.png").default;
 

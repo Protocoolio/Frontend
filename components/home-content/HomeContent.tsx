@@ -7,12 +7,13 @@ import {
   CardsWrapper,
   MainContentWrapper,
 } from "./HomeContent.styled";
+import { CardInfo } from "../../types/CommonTypes";
 
 interface HomeContentProps {
-  page?: string;
+  cards?: CardInfo[];
 }
 
-const HomeContent = ({ page }: HomeContentProps) => {
+const HomeContent = ({ cards }: HomeContentProps) => {
   return (
     <HomeContentWrapper>
       <FilterBar />

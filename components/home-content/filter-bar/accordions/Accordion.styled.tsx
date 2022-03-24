@@ -36,8 +36,39 @@ const Title = styled(Typography)`
   font-weight: bold;
 `;
 
-const TextContent = styled(Typography)`
-  font-family: ${customStyle.fonts.roboto};
+// const TextContent = styled(Typography)`
+//   font-family: ${customStyle.fonts.roboto};
+//   font-size: 14px;
+//   font-weight: bold;
+// `;
+
+const TextContent = styled(Typography)<{ network?: boolean }>(
+  ({ network }) => ({
+    fontFamily: `${customStyle.fonts.roboto}`,
+    fontSize: "14px",
+    fontWeight: "bold",
+    marginLeft: network ? "5px" : "0",
+  })
+);
+
+const Content = styled("div")`
+  width: 100%;
+  height: 100%;
+`;
+
+export const SortNetworkItem = styled("div")`
+  display: flex;
+  align-items: center;
+  padding: 5px;
+
+  &:hover {
+    background-color: ${customStyle.colors.primary};
+    cursor: pointer;
+  }
+`;
+
+export const CheckboxItem = styled("div")`
+  margin-left: 5px;
 `;
 
 export const Accordion = {
@@ -46,4 +77,5 @@ export const Accordion = {
   Details,
   Title,
   TextContent,
+  Content,
 };

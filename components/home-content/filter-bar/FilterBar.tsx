@@ -1,9 +1,7 @@
 import React from "react";
 
-import AccordionStatus from "./accordions/AccordionStatus";
-import AccordionPrice from "./accordions/AccordionPrice";
-import AccordionCollections from "./accordions/AccordionCollections";
-import AccordionCategories from "./accordions/AccordionCategories";
+import AccordionNetwork from "./accordions/AccordionNetwork";
+import AccordionContracts from "./accordions/AccordionContracts";
 
 import {
   FilterContainer,
@@ -13,6 +11,7 @@ import {
   Title,
   StickyContainer,
 } from "./FilterBar.styled";
+import AccordionSelections from "./accordions/AccordionSelections";
 
 const FilterBar = () => {
   return (
@@ -25,10 +24,9 @@ const FilterBar = () => {
           </IconContainer>
         </FilterItem>
         <>
-          <AccordionStatus />
-          <AccordionPrice />
-          <AccordionCollections />
-          <AccordionCategories />
+          <AccordionNetwork />
+          <AccordionContracts />
+          <AccordionSelections />
         </>
       </StickyContainer>
     </FilterContainer>

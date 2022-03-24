@@ -23,3 +23,14 @@ export interface CardInfo {
     telegram: string;
   };
 }
+
+export interface NetworkSortItem {
+  id: number;
+  name: string;
+  src: string;
+}
+
+export interface CollectionsSortItem {
+  id: number;
+  name: string;
+}
