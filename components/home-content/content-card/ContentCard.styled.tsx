@@ -36,21 +36,15 @@ export const CardImage = styled.img`
   height: 280px;
 `;
 
-export const CardContent = styled.div<{ animateCardDescription?: boolean }>(
-  ({ animateCardDescription }) => css`
-    display: flex;
-    flex-direction: column;
-
-    ${animateCardDescription &&
-    css`
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      right: 10px;
-      background-color: ${customStyle.colors.white};
-    `}
-  `
-);
+export const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: ${customStyle.colors.white};
+`;
 
 export const CardName = styled.div`
   font-family: ${customStyle.fonts.lato};
@@ -79,12 +73,39 @@ export const CardDescription = styled.div<{ animateCardDescription?: boolean }>(
     text-align: center;
     margin: 5px;
     font-size: 12px;
+    max-height: 50px;
+    overflow-y: hidden;
+    transition: max-height 0.4s;
+    position: relative;
 
     ${animateCardDescription &&
     css`
-      max-height: auto;
-      height: auto;
-    `}
+      &:hover {
+        max-height: 300px;
+        transition: max-height 0.4s ease-in;
+        overflow-y: none;
+
+        &:after {
+          height: 0;
+          transition: 0.4s;
+        }
+      }
+
+      &:after {
+        content: "";
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 1)
+        );
+        bottom: 0;
+        height: 30px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        transition: 2s;
+      }
+    `};
   `
 );
 

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 import {
   Card,
@@ -25,7 +26,7 @@ const DUMMY_DATA: CardInfo = {
   name: "Tomb Fork",
   image: "https://assets.duelistking.com/metadata/horus--rage.jpg",
   description:
-    "This is an innovatinve farmining protocol This is an innovatinve farmining protocol This is an innovatinve farmining protocol This is an innovatinve farmining protocol This is an innovatinve farmining protocolThis is an innovatinve farmining protoco This is an innovatinve farmining protocol This is an innovatinve farmining protocol",
+    "This is an innovatinve farmining protocol This is an innovatinve farmining protocol This is an innovatinve farmining protocol This is an innovatinve farmining protocol This is an innovatinve farmining protocolThis is an innovatinve farmining protoco This is an innovatinve farmining protocol This is an innovatinve farmining protocol s is",
   startDate: "Tue Mar 22 2022 09:35:40 GMT+0000",
   network: "Fantom",
   verified: true,
@@ -53,10 +54,7 @@ const ContentCard = () => {
     </TagItem>
   ));
 
-  const animateCardDescription = descriptionHeight > MAX_DESCRIPTION_HEIGHT;
-
-  console.log(descriptionHeight);
-  console.log(animateCardDescription);
+  const animateCardDescription = descriptionHeight >= MAX_DESCRIPTION_HEIGHT;
 
   const getDescriptionHeight = () => {
     setDescriptionHeight(descriptionRef.current?.clientHeight || 0);
@@ -65,10 +63,11 @@ const ContentCard = () => {
   useLayoutEffect(() => {
     getDescriptionHeight();
   }, [descriptionRef.current?.clientHeight]);
+
   return (
     <Card>
       <CardImage src={DUMMY_DATA.image} alt={DUMMY_DATA.name} />
-      <CardContent animateCardDescription={animateCardDescription}>
+      <CardContent>
         <CardName>
           {DUMMY_DATA.name}
           <IconWrapper>
