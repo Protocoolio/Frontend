@@ -3,6 +3,7 @@ import { customStyle } from "../../styles/constants";
 
 export const HeaderContainer = styled.header(
   () => css`
+    align-items: center;
     background-color: ${customStyle.colors.secondary};
     border-bottom: 1px solid ${customStyle.colors.border};
     border-top: 1px solid ${customStyle.colors.border};

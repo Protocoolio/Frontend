@@ -17,7 +17,7 @@ export const customStyle = {
 export const breakpoints = {
   xxs: 375,
   xs: 575,
-  sm: 767,
+  mobile: 767,
   md: 991,
   lg: 1199,
   xl: 1399,
