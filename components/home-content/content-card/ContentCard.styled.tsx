@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { customStyle } from "../../../styles/constants";
+import { breakpoints, customStyle } from "../../../styles/constants";
 
 export const Card = styled.div`
   background-color: ${customStyle.colors.white};
@@ -11,8 +11,20 @@ export const Card = styled.div`
   border: none;
   position: relative;
 
+  @media (max-width: ${breakpoints.mobile}px) {
+    position: static;
+  }
+
+  @media (max-width: ${breakpoints.xxs}px) {
+    width: 280px;
+  }
+
   .btn_details {
     visibility: hidden;
+
+    @media (max-width: ${breakpoints.mobile}px) {
+      visibility: visible;
+    }
   }
 
   &:hover {
@@ -44,6 +56,10 @@ export const CardContent = styled.div`
   left: 10px;
   right: 10px;
   background-color: ${customStyle.colors.white};
+
+  @media (max-width: ${breakpoints.mobile}px) {
+    position: static;
+  }
 `;
 
 export const CardName = styled.div`
@@ -80,10 +96,20 @@ export const CardDescription = styled.div<{ animateCardDescription?: boolean }>(
 
     ${animateCardDescription &&
     css`
+      @media (max-width: ${breakpoints.mobile}px) {
+        overflow-y: scroll;
+        max-height: 50px;
+      }
+
       &:hover {
         max-height: 300px;
         transition: max-height 0.4s ease-in;
         overflow-y: none;
+
+        @media (max-width: ${breakpoints.mobile}px) {
+          overflow-y: scroll;
+          max-height: 50px;
+        }
 
         &:after {
           height: 0;
@@ -92,6 +118,10 @@ export const CardDescription = styled.div<{ animateCardDescription?: boolean }>(
       }
 
       &:after {
+        @media (max-width: ${breakpoints.mobile}px) {
+          display: none;
+        }
+
         content: "";
         background: linear-gradient(
           to bottom,

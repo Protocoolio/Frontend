@@ -6,37 +6,58 @@ import {
   HomeContentWrapper,
   CardsWrapper,
   MainContentWrapper,
+  ShowFiltersButton,
+  FilterButtonWrapper,
+  FilterCounter,
 } from "./HomeContent.styled";
-import { CardInfo } from "../../types/CommonTypes";
+import { useWindowSize } from "../../utils/hooks/useWindowSize";
+import { breakpoints } from "../../styles/constants";
+import { useState } from "react";
 
 interface HomeContentProps {
-  cards?: CardInfo[];
+  // cards?: CardInfo[];
+  page: string;
 }
 
-const HomeContent = ({ cards }: HomeContentProps) => {
+const HomeContent = ({ page }: HomeContentProps) => {
+  const [showFilterBar, setShowFilterBar] = useState(false);
+
+  const { isMaxWidth } = useWindowSize();
   return (
-    <HomeContentWrapper>
-      <FilterBar />
-      <MainContentWrapper>
-        <SortPanel />
-        <CardsWrapper>
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-        </CardsWrapper>
-      </MainContentWrapper>
-    </HomeContentWrapper>
+    <>
+      <HomeContentWrapper>
+        <FilterBar showFilterBar={showFilterBar} />
+        <MainContentWrapper>
+          <SortPanel />
+          <CardsWrapper>
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+            <ContentCard />
+          </CardsWrapper>
+        </MainContentWrapper>
+        {isMaxWidth(breakpoints.mobile) && (
+          <FilterButtonWrapper>
+            <ShowFiltersButton
+              variant="contained"
+              onClick={() => setShowFilterBar(!showFilterBar)}
+            >
+              Filters <FilterCounter>3</FilterCounter>
+            </ShowFiltersButton>
+          </FilterButtonWrapper>
+        )}
+      </HomeContentWrapper>
+    </>
   );
 };
 

@@ -13,10 +13,14 @@ import {
 } from "./FilterBar.styled";
 import AccordionSelections from "./accordions/AccordionSelections";
 
-const FilterBar = () => {
+interface FilterBarProps {
+  showFilterBar: boolean;
+}
+
+const FilterBar = ({ showFilterBar }: FilterBarProps) => {
   return (
-    <FilterContainer>
-      <StickyContainer>
+    <FilterContainer showFilterBar={showFilterBar}>
+      <StickyContainer showFilterBar={showFilterBar}>
         <FilterItem>
           <Title>Filters</Title>
           <IconContainer>

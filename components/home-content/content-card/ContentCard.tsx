@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
@@ -60,7 +60,7 @@ const ContentCard = () => {
     setDescriptionHeight(descriptionRef.current?.clientHeight || 0);
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     getDescriptionHeight();
   }, [descriptionRef.current?.clientHeight]);
 

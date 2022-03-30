@@ -3,16 +3,16 @@ import { customStyle } from "../../../styles/constants";
 
 export const SideMenuWrapper = styled.div<{ sideMenuActive?: boolean }>(
   ({ sideMenuActive }) => css`
+    background-color: ${customStyle.colors.secondary};
+    display: flex;
     height: 95vh;
-    width: 100vw;
+    justify-content: center;
     position: fixed;
     top: 5vh;
     transform: translateX(100vw);
-    z-index: 999;
-    background-color: ${customStyle.colors.secondary};
-    transition: 0.7s ease;
-    display: flex;
-    justify-content: center;
+    transition: 0.5s ease;
+    width: 100vw;
+    z-index: 99;
 
     ${sideMenuActive &&
     css`
@@ -22,6 +22,7 @@ export const SideMenuWrapper = styled.div<{ sideMenuActive?: boolean }>(
 );
 
 export const Navigation = styled.ul`
+  align-items: center;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -34,17 +35,19 @@ export const Navigation = styled.ul`
 
 export const NavigationItem = styled.li`
   cursor: pointer;
+  font-family: ${customStyle.fonts.lato};
+  font-size: 24px;
+  font-weight: bold;
   margin: 10px 0;
   transition: 0.2s;
-  font-size: 24px;
 
   &:hover {
     transform: scale(1.2);
   }
 
   & > a {
-    text-decoration: none;
     color: ${customStyle.colors.black};
+    text-decoration: none;
 
     &:hover {
       color: ${customStyle.colors.violet};

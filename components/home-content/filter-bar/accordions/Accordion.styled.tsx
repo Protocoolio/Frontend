@@ -36,12 +36,6 @@ const Title = styled(Typography)`
   font-weight: bold;
 `;
 
-// const TextContent = styled(Typography)`
-//   font-family: ${customStyle.fonts.roboto};
-//   font-size: 14px;
-//   font-weight: bold;
-// `;
-
 const TextContent = styled(Typography)<{ network?: boolean }>(
   ({ network }) => ({
     fontFamily: `${customStyle.fonts.roboto}`,
