@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
 
-import { CardInfo } from "../../../types/CommonTypes";
+import { CardItem } from "../../../types/CommonTypes";
 
 import {
   Card,
@@ -22,7 +22,7 @@ import {
 
 const verifiedLogo = require("../../../shared/images/checked.png").default;
 
-const DUMMY_DATA: CardInfo = {
+const DUMMY_DATA: CardItem = {
   name: "Tomb Fork",
   image: "https://assets.duelistking.com/metadata/horus--rage.jpg",
   description:

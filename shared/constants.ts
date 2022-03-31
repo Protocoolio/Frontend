@@ -1,6 +1,6 @@
 import {
-  CollectionsSortItem,
-  FilterOptions,
+  CollectionsAndContractsSortItem,
+  FilterAccordionsOptions,
   NetworkSortItem,
   SortOptions,
 } from "../types/CommonTypes";
@@ -12,7 +12,7 @@ export const sortOptions: SortOptions[] = [
   "Recently added",
 ];
 
-export const filterOptions: FilterOptions[] = [
+export const filterOptions: FilterAccordionsOptions[] = [
   "Contracts verified",
   "Network",
   "Selections",
@@ -25,9 +25,14 @@ export const networkSortItems: NetworkSortItem[] = [
   { id: 4, name: "Avalanche", src: require("./images/avalanche.png").default },
 ];
 
-export const collectionsSortItems: CollectionsSortItem[] = [
+export const collectionsSortItems: CollectionsAndContractsSortItem[] = [
   { id: 1, name: "Renounced" },
   { id: 2, name: "Audited" },
   { id: 3, name: "KYC" },
   { id: 4, name: "Promoted" },
+];
+
+export const contractsSortItems: CollectionsAndContractsSortItem[] = [
+  { id: 1, name: "Verified" },
+  { id: 2, name: "NotVerified" },
 ];

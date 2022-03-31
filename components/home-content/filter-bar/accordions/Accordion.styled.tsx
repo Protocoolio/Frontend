@@ -50,16 +50,21 @@ const Content = styled("div")`
   height: 100%;
 `;
 
-export const SortNetworkItem = styled("div")`
-  display: flex;
-  align-items: center;
-  padding: 5px;
+export const SortNetworkItem = styled("div")<{ active?: boolean }>(
+  ({ active }) => ({
+    display: "flex",
+    alignItems: "center",
+    padding: "5px",
+    margin: "5px",
+    backgroundColor: active
+      ? `${customStyle.colors.border}`
+      : `${customStyle.colors.secondary}`,
 
-  &:hover {
-    background-color: ${customStyle.colors.primary};
-    cursor: pointer;
-  }
-`;
+    "&:hover": {
+      cursor: "pointer",
+    },
+  })
+);
 
 export const CheckboxItem = styled("div")`
   margin-left: 5px;

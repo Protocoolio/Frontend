@@ -4,9 +4,24 @@ export type SortOptions =
   | "Name alphabetical"
   | "Launching soon";
 
-export type FilterOptions = "Network" | "Contracts verified" | "Selections";
+export type FilterAccordionsOptions =
+  | "Network"
+  | "Contracts verified"
+  | "Selections";
 
-export interface CardInfo {
+export type FilterOption =
+  | "Fantom"
+  | "BSC"
+  | "Polygon"
+  | "Avalanche"
+  | "Renounced"
+  | "Audited"
+  | "KYC"
+  | "Promoted"
+  | "Verified"
+  | "NotVerified";
+
+export interface CardItem {
   name: string;
   image: string;
   description: string;
@@ -26,11 +41,11 @@ export interface CardInfo {
 
 export interface NetworkSortItem {
   id: number;
-  name: string;
+  name: FilterOption;
   src: string;
 }
 
-export interface CollectionsSortItem {
+export interface CollectionsAndContractsSortItem {
   id: number;
-  name: string;
+  name: FilterOption;
 }
